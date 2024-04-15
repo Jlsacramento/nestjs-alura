@@ -1,10 +1,12 @@
 import { IsNotEmpty, IsString, IsEmail } from 'class-validator';
 import { Exclude, Expose } from 'class-transformer';
 import { IsNomeDeUsuarioUnico } from './is-nome-de-usuario-unico.validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class Usuario {
   id: number;
 
+  @ApiProperty()
   @Expose({
     name: 'username',
   })
@@ -19,6 +21,7 @@ export class Usuario {
   })
   nomeDeUsuario: string;
 
+  @ApiProperty()
   @Expose({
     name: 'email',
   })
@@ -30,6 +33,7 @@ export class Usuario {
   )
   email: string;
 
+  @ApiProperty()
   @Expose({
     name: 'password',
   })
@@ -41,6 +45,7 @@ export class Usuario {
   })
   senha: string;
 
+  @ApiProperty()
   @Expose({
     name: 'fullName',
   })
@@ -49,6 +54,7 @@ export class Usuario {
   })
   nomeCompleto: string;
 
+  @ApiProperty()
   @Expose({
     name: 'joinDate',
   })
